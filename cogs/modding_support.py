@@ -25,7 +25,7 @@ class ModdingSupport(commands.Cog):
     @commands.command(name='source')
     async def source(self, ctx):
         embed = discord.Embed(title= "Source Code")
-        embed.add_field(name="Github", value = "https://github.com/Arbigate/modlinkbot")
+        embed.add_field(name="Github", value = "https://github.com/Geborgen/moddingsupport")
         await ctx.send(embed=embed)
 
     @commands.command(name='guide')
