@@ -165,7 +165,7 @@ class ModdingSupport(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='sinitar')
-    async def sos(self, ctx):
+    async def sinitar(self, ctx):
         embed = discord.Embed(title='He had a 29 page essay written about him, should say something.', description='https://docs.google.com/document/d/1F1-6lF8dI4i2Zz8iT-bv_Ci1VO9MSU4MiSUrT5JqgHA/edit?usp=sharing')
         await ctx.send(embed=embed)
 
