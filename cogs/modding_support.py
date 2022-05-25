@@ -94,6 +94,11 @@ class ModdingSupport(commands.Cog):
         embed = discord.Embed(title='Fixing Deleted Navmesh Tutorial by Arbigate', description='https://docs.google.com/document/d/1tTu3N4l5FTs8zb5sNrTvkHFXgrXvQC7WVdT_XJnaXe4/edit?usp=sharing')
         await ctx.send(embed=embed)
 
+    @commands.command(name='eslify')
+    async def name(self, ctx):
+        embed = discord.Embed(title='ESL Flagging Plugins Tutorial', description='https://www.nexusmods.com/skyrimspecialedition/mods/21618')
+        await ctx.send(embed=embed)
+
     @commands.command(name='vanillastart')
     async def vanillastart(self, ctx):
         embed = discord.Embed(title='Broken intro cutscene? Try this!', description='Use this mod to make your character, then wait a few minutes and let your scripts \n load. Then select vanilla start. \n https://www.nexusmods.com/skyrimspecialedition/mods/272 \n \n Additionally, try this fix: \n https://www.nexusmods.com/skyrimspecialedition/mods/8004')
@@ -192,7 +197,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='help')
     async def help(self, ctx, pages = None):
-        help_body = [" -guide (beginner's modding guide) \n -skse (SKSE tutorial) \n -ae / -downgrade (information about AE) \n -version (breaks down the versions of the game) \n -porting / -converting (tutorial for porting mods) \n -crash (what to do in the event of a crash) \n -modmanager (mod manager comparison) \n -reinstall (how to correctly reinstall the game) \n -laws (10 Commandments of Modding™️)", " -nemesis (tutorial for Nemesis engine) \n -dyndolod (tutorial for DynDOLOD) \n -cleaning (xEdit plugin cleaning) \n -navmesh (fixing deleted navmesh) \n -vanillastart (fixing broken vanilla intro) \n -loadorder / -loot (load order resources) \n -corrupt / -fallrim (corrupted save game resources)", " -essentials (list of essential mods) \n -script (script info board) \n -modlimit (mod limit info board) \n -enb (ENB info board) \n -ini (ini resources) \n -modlist (modlist sharing resources) \n -ussep (link to USSEP) \n -tudm (link to TUDM) \n -synthesis (link to Synthesis patcher) \n -xbox (Xbox mod recommendations) \n -ps4 (PlayStation mod recommendations)", " -sinitar (essay on Sinitar) \n -sos (returns a random 'SOS' mod) \n -rtfm (read the [redacted] manual) \n -tryitandsee (please do this) \n -dontasktoask (seriously, just ask your question) \n -stefan (ignore him)"]
+        help_body = [" -guide (beginner's modding guide) \n -skse (SKSE tutorial) \n -ae / -downgrade (information about AE) \n -version (breaks down the versions of the game) \n -porting / -converting (tutorial for porting mods) \n -crash (what to do in the event of a crash) \n -modmanager (mod manager comparison) \n -reinstall (how to correctly reinstall the game) \n -laws (10 Commandments of Modding™️)", " -nemesis (tutorial for Nemesis engine) \n -dyndolod (tutorial for DynDOLOD) \n -cleaning (xEdit plugin cleaning) \n -navmesh (fixing deleted navmesh) \n -eslify (ESL flagging plugins) \n -vanillastart (fixing broken vanilla intro) \n -loadorder / -loot (load order resources) \n -corrupt / -fallrim (corrupted save game resources)", " -essentials (list of essential mods) \n -script (script info board) \n -modlimit (mod limit info board) \n -enb (ENB info board) \n -ini (ini resources) \n -modlist (modlist sharing resources) \n -ussep (link to USSEP) \n -tudm (link to TUDM) \n -synthesis (link to Synthesis patcher) \n -xbox (Xbox mod recommendations) \n -ps4 (PlayStation mod recommendations)", " -sinitar (essay on Sinitar) \n -sos (returns a random 'SOS' mod) \n -rtfm (read the [redacted] manual) \n -tryitandsee (please do this) \n -dontasktoask (seriously, just ask your question) \n -stefan (ignore him)"]
         try:
             if pages is None:
                 embed = discord.Embed(title='Modding Support Help', description=help_body[0])
