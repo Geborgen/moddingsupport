@@ -65,4 +65,4 @@ The prefix is "-" and is currently unchangable.
 * -stefan (ignore him)
 
 # Primary Homes
-The bot primarily operates in [the r/skyrim Discord](https://discord.com/invite/skyrim) and [Geb's World](https://discord.com/invite/WC9ZqcTsmd).
+The bot primarily operates in the [r/skyrim Discord](https://discord.com/invite/skyrim) and [Geb's World](https://discord.com/invite/WC9ZqcTsmd).
