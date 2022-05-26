@@ -63,3 +63,6 @@ The prefix is "-" and is currently unchangable.
 * -tryitandsee (please do this)
 * -dontasktoask (seriously, just ask your question)
 * -stefan (ignore him)
+
+# Primary Homes
+The bot primarily operates in [the r/skyrim Discord](https://discord.com/invite/skyrim) and [Geb's World](https://discord.com/invite/WC9ZqcTsmd).
