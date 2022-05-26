@@ -95,7 +95,7 @@ class ModdingSupport(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='eslify')
-    async def name(self, ctx):
+    async def eslify(self, ctx):
         embed = discord.Embed(title='ESL Flagging Plugins Tutorial', description='https://www.nexusmods.com/skyrimspecialedition/mods/21618')
         await ctx.send(embed=embed)
 
