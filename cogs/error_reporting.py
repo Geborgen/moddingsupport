@@ -17,10 +17,15 @@ import discord
 from discord.ext import commands
 from datetime import datetime
 
+valid_id = [668828647653638174]
+
 class ErrorReporting(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    
+        
+    def check_author(ctx):
+        if ctx.author.id in valid_id:
+            return ctx.author.id in valid_id
 
     @commands.command(name='error')
     async def error(self, ctx):
@@ -38,6 +43,13 @@ class ErrorReporting(commands.Cog):
         await user.send(embed=embed)
         await ctx.send("The error has been reported. Thank you!")
 
+    @commands.command(name='respond')
+    @commands.check(check_author)
+    async def respond(self, ctx, user: discord.User, *, response):
+        embed = discord.Embed(title="Error Response")
+        embed.add_field(name=f"Responder: {ctx.message.author.name}", value=f"{response}")
+        await user.send(embed=embed)
+        await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(ErrorReporting(bot))
