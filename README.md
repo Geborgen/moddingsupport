@@ -27,6 +27,7 @@ Some mods have acronyms, which you can input:
 Input "SOS" for something special.
 
 # Support Commands
+The prefix is "-" and is currently unchangable.
 * -guide (beginner's modding guide)
 * -skse (SKSE tutorial)
 * -ae / -downgrade (information about AE)
