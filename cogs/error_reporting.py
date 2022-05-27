@@ -32,12 +32,10 @@ class ErrorReporting(commands.Cog):
         user = self.bot.get_user(668828647653638174)
         if user is None:
             user = await self.bot.fetch_user(668828647653638174)
-            sender_id = ctx.message.author.id
-            sender_name = ctx.message.author.name
             channel = ctx.message.channel.name
             timestamp = datetime.now()
         embed = discord.Embed(title="Modlink Error Reported")
-        embed.add_field(name="Reporter:", value=f"Name: {sender_name} \n ID: {sender_id}", inline=False)
+        embed.add_field(name="Reporter:", value=f"Name: {ctx.message.author.name}#{ctx.message.author.discriminator} \n ID: {ctx.message.author.id}", inline=False)
         embed.add_field(name="Channel:", value=f"#{channel}", inline=False)
         embed.add_field(name="Date and Time:", value= str(timestamp))
         await user.send(embed=embed)
@@ -45,9 +43,9 @@ class ErrorReporting(commands.Cog):
 
     @commands.command(name='respond')
     @commands.check(check_author)
-    async def respond(self, ctx, user: discord.User, *, response):
-        embed = discord.Embed(title="Error Response")
-        embed.add_field(name=f"Responder: {ctx.message.author.name}", value=f"{response}")
+    async def respond(self, ctx, user: discord.User, error_image, *, response):
+        embed = discord.Embed(title="Error Response", description=f"**Responder:** {ctx.message.author.name}#{ctx.message.author.discriminator} \n \n **Response:**\n {response}")
+        embed.set_image(url=f"{error_image}")
         await user.send(embed=embed)
         await ctx.send(embed=embed)
 
