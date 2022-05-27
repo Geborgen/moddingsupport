@@ -46,8 +46,11 @@ class ErrorReporting(commands.Cog):
     async def respond(self, ctx, user: discord.User, error_image, *, response):
         embed = discord.Embed(title="Error Response", description=f"**Responder:** {ctx.message.author.name}#{ctx.message.author.discriminator} \n \n **Response:**\n {response}")
         embed.set_image(url=f"{error_image}")
-        await user.send(embed=embed)
-        await ctx.send(embed=embed)
+        try:
+            await user.send(embed=embed)
+            await ctx.send(embed=embed)
+        except discord.Forbidden:
+            await ctx.send("I don't have permission to message that user.")
 
 def setup(bot):
     bot.add_cog(ErrorReporting(bot))
