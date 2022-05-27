@@ -22,7 +22,8 @@ exceptions = {
 'enb light':'https://www.nexusmods.com/skyrimspecialedition/mods/22574',
 'sky idles':'https://www.nexusmods.com/skyrimspecialedition/mods/45794',
 'wabbajack':'https://www.wabbajack.org',
-'maximum carnage':'https://www.nexusmods.com/skyrimspecialedition/mods/43494'
+'maximum carnage':'https://www.nexusmods.com/skyrimspecialedition/mods/43494',
+'open cities':'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
 }
 
 le_modlink_exceptions = [
