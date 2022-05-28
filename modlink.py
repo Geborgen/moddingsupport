@@ -26,20 +26,27 @@ STRIP_REGEX = re.compile(r"[^\w]+")
 def parse_query(query):
     return re.sub(STRIP_REGEX, ",", query.replace("'s", ""))
 
-async def get_modlink(self, query): #Note: Neither of the below are required for current functions, but I plan to use them in the future. 
-    if query.lower() not in se_modlink_exceptions:
-        async with self.session.get("https://search.nexusmods.com/mods", params={"terms": parse_query(query), "game_id": 1704}) as resp:
-            if resp.status == 200:
-                data = await resp.json()
-                results = data["results"]
-                if results:
-                    return results[0]
 
-async def get_le_modlink(self, query):
-    if query.lower() not in le_modlink_exceptions:
-        async with self.session.get("https://search.nexusmods.com/mods", params={"terms": parse_query(query), "game_id": 110}) as resp:
-            if resp.status == 200:
-                data = await resp.json()
-                results = data["results"]
-                if results:
-                    return results[0]
+# NOTE: The below will be used in a future change. This file is silly currently since it is almost empty, but that will change soon.
+
+# async def get_modlink(self, query, include_adult = False):
+#    if query.lower() not in se_modlink_exceptions:
+#        async with self.session.get("https://search.nexusmods.com/mods", params={"terms": parse_query(query), "game_id": 1704, "include_adult": str(include_adult).lower()}) as resp:
+#            if resp.status == 200:
+#                data = await resp.json()
+#                results = data["results"]
+#                if results:
+#                    return results[0]
+#    else:
+#        return
+
+# async def get_le_modlink(self, query, include_adult=False):
+#    if query.lower() not in le_modlink_exceptions:
+#        async with self.session.get("https://search.nexusmods.com/mods", params={"terms": parse_query(query), "game_id": 110, "include_adult": str(include_adult).lower()}) as resp:
+#            if resp.status == 200:
+#                data = await resp.json()
+#                results = data["results"]
+#                if results:
+#                    return results[0]
+#    else:
+#        return
