@@ -214,7 +214,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='ping')
     async def ping(self, ctx):
-        await ctx.send(f':ping_ping: Pong! Bot is online at ``{round(self.bot.latency*1000)} ms``')
+        await ctx.send(f':ping_pong: Pong! Bot is online at ``{round(self.bot.latency*1000)} ms``')
 
 
 
