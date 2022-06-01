@@ -41,12 +41,12 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='ae', aliases=['downgrade'])
     async def ae(self, ctx):
-        embed = discord.Embed(title="Skyrim Anniversary Edition Info + Downgrade", description="November 11 2021 was Skyrim’s 10th anniversary. Bethesda released two things that \n day: \n 1. An update to the main game, which includes engine fixes as well as four pieces of \n Creation Club content (survival mode, fishing, and others). This (forced) update was \n free for all Skyrim Special Edition owners \n 2. A new DLC. This Anniversary Edition Upgrade (different from the update) was \n 20$ on Steam and acted as a fourth DLC. It included all previously released Creation \n Club content. \n \n As with any Skyrim update, the Script Extender broke. Normally this would only \n cause a day or two before it updates and everything is back to normal. However, \n considering how many changes occurred with AE, __any not-yet-updated SKSE mod \n that uses a DLL plugin will be broken__. SKSE has updated, and mod authors are \n slowly updating their mods. However, it will be a while before things settle back to \n normalcy. \n \n If you wish to downgrade, use this tool: \n https://www.nexusmods.com/skyrimspecialedition/mods/57618 \n \n More info: \n https://docs.google.com/document/d/18gcAJY9DOPwMbtvwBcydvtQ6ca8z6-ZJ9vWXHli5Uks/edit?usp=sharing \n \n Common issues: \n -SKSE version mismatch. Skyrim SE is runtime **1.5.97** wheras AE is **1.6.353** (make \n sure you have the correct SKSE version). Additionally, make sure your *Address \n Library for SKSE Plugins* is updated. \n -Trying to use non-updated SKSE mods. Make sure to read every mod page, ensure \n it has an AE version. You can also click *preview file contents* to verify if it has a DLL (if \n it has a DLL it will need an AE update).")
+        embed = discord.Embed(title="Skyrim Anniversary Edition Info + Downgrade", description="November 11 2021 was Skyrim’s 10th anniversary. Bethesda released two things that \n day: \n 1. An update to the main game, which includes engine fixes as well as four pieces of \n Creation Club content (survival mode, fishing, and others). This (forced) update was \n free for all Skyrim Special Edition owners \n 2. A new DLC. This Anniversary Edition Upgrade (different from the update) was 20$ on Steam and acted as a fourth DLC. It included all previously released Creation Club content. \n \n As with any Skyrim update, the Script Extender broke. Normally this would only cause a day or two before it updates and everything is back to normal. However, considering how many changes occurred with AE, __any not-yet-updated SKSE mod that uses a DLL plugin will be broken__. SKSE has updated, and mod authors are slowly updating their mods. However, it will be a while before things settle back to normalcy. \n \n If you wish to downgrade, use this tool: \n https://www.nexusmods.com/skyrimspecialedition/mods/57618 \n \n More info: \n https://docs.google.com/document/d/18gcAJY9DOPwMbtvwBcydvtQ6ca8z6-ZJ9vWXHli5Uks/edit?usp=sharing \n \n Common issues: \n -SKSE version mismatch. Skyrim SE is runtime **1.5.97** wheras AE is **1.6.353** (make sure you have the correct SKSE version). Additionally, make sure your *Address \n Library for SKSE Plugins* is updated. \n -Trying to use non-updated SKSE mods. Make sure to read every mod page, ensure it has an AE version. You can also click *preview file contents* to verify if it has a DLL (if it has a DLL it will need an AE update).")
         await ctx.send(embed=embed)
 
     @commands.command(name='version')
     async def version(self, ctx):
-        embed = discord.Embed(title='What version of Skyrim should I get?', description='Legendary Edition (LE): The original version of Skyrim released in 2011, with all \n DLC. Oldrim refers to the base game without DLC. This version is mostly \n unsupported. \n \n Special Edition (SE): Updated version of the game, released in 2016. Includes all DLC \n and major graphical/engine updates. Most mods are released here, and you will get \n the most support for SE.')
+        embed = discord.Embed(title='What version of Skyrim should I get?', description='Legendary Edition (LE): The original version of Skyrim released in 2011, with all \n DLC. Oldrim refers to the base game without DLC. This version is mostly \n unsupported. \n \n Special Edition (SE): Updated version of the game, released in 2016. Includes all DLC and major graphical/engine updates. Most mods are released here, and you will get the most support for SE.')
         await ctx.send(embed=embed)
 
     @commands.command(name='porting', aliases=['converting', 'port', 'convert'])
@@ -61,7 +61,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='modmanager')
     async def modmanager(self, ctx):
-        embed = discord.Embed(title='What Mod Manager Should I Use?', description='Breakdown: https://pastebin.com/5gKqk5LN \n \n MO2: https://www.nexusmods.com/skyrimspecialedition/mods/6194 \n \n Vortex: https://www.nexusmods.com/about/vortex/ \n \n You may see a lot of references to “Nexus Mod Manager” or NMM. DO NOT USE \n NMM. Not only is it no longer officially maintained or even supported by modern \n tools, it is known to directly modify game files and lacks essential features.')
+        embed = discord.Embed(title='What Mod Manager Should I Use?', description='Breakdown: https://pastebin.com/5gKqk5LN \n \n MO2: https://www.nexusmods.com/skyrimspecialedition/mods/6194 \n \n Vortex: https://www.nexusmods.com/about/vortex/ \n \n You may see a lot of references to “Nexus Mod Manager” or NMM. DO NOT USE NMM. Not only is it no longer officially maintained or even supported by modern tools, it is known to directly modify game files and lacks essential features.')
         await ctx.send(embed=embed)
 
     @commands.command(name='reinstall')
@@ -101,7 +101,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='vanillastart')
     async def vanillastart(self, ctx):
-        embed = discord.Embed(title='Broken intro cutscene? Try this!', description='Use this mod to make your character, then wait a few minutes and let your scripts \n load. Then select vanilla start. \n https://www.nexusmods.com/skyrimspecialedition/mods/272 \n \n Additionally, try this fix: \n https://www.nexusmods.com/skyrimspecialedition/mods/8004')
+        embed = discord.Embed(title='Broken intro cutscene? Try this!', description='Use this mod to make your character, then wait a few minutes and let your scripts load. Then select vanilla start. \n https://www.nexusmods.com/skyrimspecialedition/mods/272 \n \n Additionally, try this fix: \n https://www.nexusmods.com/skyrimspecialedition/mods/8004')
         await ctx.send(embed=embed)
 
     @commands.command(name='loadorder', aliases=['loot'])
@@ -111,7 +111,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='corrupt', aliases=['fallrim'])
     async def corrupt(self, ctx):
-        embed = discord.Embed(title='Corrupted save? Try this!', description='When playing a modded game, **always** make frequent saves that **are not** quick or \n autosaves. **Do not** save during heavy script load areas e.g. combat. **Do not** delete old \n saves. \n \n READ THE MOD PAGE: \n https://www.nexusmods.com/skyrimspecialedition/mods/5031')
+        embed = discord.Embed(title='Corrupted save? Try this!', description='When playing a modded game, **always** make frequent saves that **are not** quick or autosaves. **Do not** save during heavy script load areas e.g. combat. **Do not** delete old saves. \n \n READ THE MOD PAGE: \n https://www.nexusmods.com/skyrimspecialedition/mods/5031')
         await ctx.send(embed=embed)
 
     @commands.command(name='essentials')
@@ -131,7 +131,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='enb')
     async def enb(self, ctx):
-        embed = discord.Embed(title="ENB Info", description="An ENB is, essentially, a complete replacement of the game's lighting and shaders, \n in addition to any weather or lighting mods you might have installed. Two different \n presets can change the aesthetic of a game drastically; you should choose wisely \n and find one suited to your weather mod and/or game aesthetic. Do you want \n fairytale fantasy? Real life? Dark Souls? There’s a preset for every visual persuasion. \n \n Every ENB has installation instructions on the mod page. You should know the basic \n steps however; download the most recent ENB binaries here: \n http://enbdev.com/download_mod_tesskyrimse.htm and extract ONLY the two .DLL \n files in the WrapperVersion folder to your game directory. Then download the preset \n of your choice and extract to your game directory. \n \n ENB Settings Breakdown: https://stepmodifications.org/wiki/Guide:ENBSeries_INI")
+        embed = discord.Embed(title="ENB Info", description="An ENB is, essentially, a complete replacement of the game's lighting and shaders, *in addition* to any weather or lighting mods you might have installed. Two different presets can change the aesthetic of a game drastically; you should choose wisely and find one suited to your weather mod and/or game aesthetic. Do you want fairytale fantasy? Real life? Dark Souls? There’s a preset for every visual persuasion. \n \n Every ENB has installation instructions on the mod page. You should know the basic steps however; download the most recent ENB binaries here: \n http://enbdev.com/download_mod_tesskyrimse.htm and extract ONLY the two .DLL files in the WrapperVersion folder to your game directory. Then download the preset of your choice and extract to your game directory. \n \n ENB Settings Breakdown: https://stepmodifications.org/wiki/Guide:ENBSeries_INI")
         await ctx.send(embed=embed)
 
     @commands.command(name='ini')
@@ -151,7 +151,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='tudm')
     async def tudm(self, ctx):
-        embed = discord.Embed(title='The Ultimate Dodge Mod', description='NOTICE: EVERYTHING BELOW IS NO LONGER NEEDED, YOU CAN JUST INSTALL \n THIS: https://www.nexusmods.com/skyrimspecialedition/mods/63000 \n \n Download: \n https://drive.google.com/file/d/0B2VgBVA9jE6RTjJiYnRTTE9qRUE/edit?resourcekey=0-atMbrLF_HPd3ogbiZaBiXw \n \n Also Needed: https://www.nexusmods.com/skyrimspecialedition/mods/54953 \n \n Recommended: https://www.nexusmods.com/skyrimspecialedition/mods/33049')
+        embed = discord.Embed(title='The Ultimate Dodge Mod', description='NOTICE: EVERYTHING BELOW IS NO LONGER NEEDED, YOU CAN JUST INSTALL THIS: \n https://www.nexusmods.com/skyrimspecialedition/mods/63000 \n \n Download: \n https://drive.google.com/file/d/0B2VgBVA9jE6RTjJiYnRTTE9qRUE/edit?resourcekey=0-atMbrLF_HPd3ogbiZaBiXw \n \n Also Needed: https://www.nexusmods.com/skyrimspecialedition/mods/54953 \n \n Recommended: https://www.nexusmods.com/skyrimspecialedition/mods/33049')
         await ctx.send(embed=embed)
 
     @commands.command(name='synthesis')
