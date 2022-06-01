@@ -76,12 +76,12 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='nemesis')
     async def nemesis(self, ctx):
-        embed = discord.Embed(title='Nemesis Unlimited Behavior Engine', description="Nemesis is the modern replacement for FNIS. It is essentially the same thing, you \n don't need FNIS at all if you use Nemesis. It will even generate an empty FNIS.esp \n for compatibility. The only thing it doesn't support are creature animations. \n \n Download: https://www.nexusmods.com/skyrimspecialedition/mods/60033 \n \n Instructions: https://www.youtube.com/watch?v=ki2bghy2Mvo \n \n Instructions for Vortex: https://www.youtube.com/watch?v=W9hrvc8ync4 \n \n Please keep in mind that these tutorials use Nemesis from GitHub; you can now just \n download from Nexus and install through your mod manager normally, then pick up \n from there. \n \n Also Useful: https://www.nexusmods.com/skyrimspecialedition/mods/45966 \n \n Whitelist Nemesis in your antivirus/turn off real time protection if you have issues. \n Also make sure you are installing mods for the correct version of your game.")
+        embed = discord.Embed(title='Nemesis Unlimited Behavior Engine', description="Nemesis is the modern replacement for FNIS. It is essentially the same thing, you don't need FNIS at all if you use Nemesis. It will even generate an empty FNIS.esp for compatibility. The only thing it doesn't support are creature animations. \n \n Download: https://www.nexusmods.com/skyrimspecialedition/mods/60033 \n \n Instructions: https://www.youtube.com/watch?v=ki2bghy2Mvo \n \n Instructions for Vortex: https://www.youtube.com/watch?v=W9hrvc8ync4 \n \n Please keep in mind that these tutorials use Nemesis from GitHub; you can now just download from Nexus and install through your mod manager normally, then pick up from there. \n \n Also Useful: https://www.nexusmods.com/skyrimspecialedition/mods/45966 \n \n Whitelist Nemesis in your antivirus/turn off real time protection if you have issues. Also make sure you are installing mods for the correct version of your game.")
         await ctx.send(embed=embed)
 
     @commands.command(name='dyndolod')
     async def dyndolod(self, ctx):
-        embed = discord.Embed(title='DynDOLOD Basic Guide by Kiloee', description='https://docs.google.com/document/d/1n1Bqh1a2kD_Kgg8Hfxc3GZtpYMORP6lYg76kWwP4rOo/edit?usp=sharing \n \n Resources for DynDOLOD 3: \n https://www.nexusmods.com/skyrimspecialedition/mods/52897')
+        embed = discord.Embed(title='DynDOLOD Guide', description='Guide by Kiloee & Geborgen: \n https://docs.google.com/document/d/1n1Bqh1a2kD_Kgg8Hfxc3GZtpYMORP6lYg76kWwP4rOo/edit?usp=sharing \n \n Video Tutorial: \n https://www.youtube.com/watch?v=encZYHEeQrQ')
         await ctx.send(embed=embed)
 
     @commands.command(name='cleaning')
