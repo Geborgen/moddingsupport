@@ -27,7 +27,8 @@ false_adult = [
     'vigilant',
     'glenmoril',
     'wico',
-    'enhanced blood textures'
+    'enhanced blood textures',
+    'xpmsse'
 ]
 
 le_modlink_exceptions = [
