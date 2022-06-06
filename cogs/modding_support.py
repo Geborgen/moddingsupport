@@ -75,7 +75,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='nemesis')
     async def nemesis(self, ctx):
-        embed = discord.Embed(title='Nemesis Unlimited Behavior Engine', description="Nemesis is the modern replacement for FNIS. It is essentially the same thing, you don't need FNIS at all if you use Nemesis. It will even generate an empty FNIS.esp for compatibility. The only thing it doesn't support are creature animations. \n\n[Download](https://www.nexusmods.com/skyrimspecialedition/mods/60033) \n\n[Instructions](https://www.youtube.com/watch?v=ki2bghy2Mvo) \n[Instructions for Vortex](https://www.youtube.com/watch?v=W9hrvc8ync4) \n\nPlease keep in mind that these tutorials use Nemesis from GitHub; you can now just download from Nexus and install through your mod manager normally, then pick up from there. \n\nAlso Useful: https://www.nexusmods.com/skyrimspecialedition/mods/45966 \n\nWhitelist Nemesis in your antivirus/turn off real time protection if you have issues. Also make sure you are installing mods for the correct version of your game.")
+        embed = discord.Embed(title='Nemesis Unlimited Behavior Engine', description="Nemesis is the modern replacement for FNIS. It is essentially the same thing, you don't need FNIS at all if you use Nemesis. It will even generate an empty FNIS.esp for compatibility. The only thing it doesn't support are creature animations. \n\n[Download](https://www.nexusmods.com/skyrimspecialedition/mods/60033) \n[Instructions](https://www.youtube.com/watch?v=ki2bghy2Mvo) \n[Instructions for Vortex](https://www.youtube.com/watch?v=W9hrvc8ync4) \n*Please keep in mind that these tutorials use Nemesis from GitHub; you can now just download from Nexus and install through your mod manager normally, then pick up from there.* \n\nWhitelist Nemesis in your antivirus/turn off real time protection if you have issues. Also make sure you are installing mods for the correct version of your game.")
         await ctx.send(embed=embed)
 
     @commands.command(name='dyndolod')
@@ -100,7 +100,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='vanillastart')
     async def vanillastart(self, ctx):
-        embed = discord.Embed(title='Broken intro cutscene? Try this!', description='Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/272) mod to make your character, then wait a few minutes and let your scripts load. Then select vanilla start. \n\nAdditionally, try [this](https://www.nexusmods.com/skyrimspecialedition/mods/8004) fix.')
+        embed = discord.Embed(title='Broken Vanilla Intro Fix', description='Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/272) mod to make your character, then wait a few minutes and let your scripts load. Then select vanilla start. \n\nAdditionally, try [this](https://www.nexusmods.com/skyrimspecialedition/mods/8004) fix.')
         await ctx.send(embed=embed)
 
     @commands.command(name='loadorder', aliases=['loot'])
@@ -110,7 +110,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='corrupt', aliases=['fallrim'])
     async def corrupt(self, ctx):
-        embed = discord.Embed(title='Corrupted save? Try this!', description='When playing a modded game, **always** make frequent saves that **are not** quick or autosaves. **Do not** save during heavy script load areas e.g. combat. **Do not** delete old saves. \n\n[FallrimTools](https://www.nexusmods.com/skyrimspecialedition/mods/5031) \nREAD THE MOD PAGE')
+        embed = discord.Embed(title='Save Corruption Resources', description='When playing a modded game, **always** make frequent saves that **are not** quick or autosaves. **Do not** save during heavy script load areas e.g. combat. **Do not** delete old saves. \n\n[FallrimTools](https://www.nexusmods.com/skyrimspecialedition/mods/5031) \nREAD THE MOD PAGE')
         await ctx.send(embed=embed)
 
     @commands.command(name='essentials')
@@ -135,12 +135,12 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='ini')
     async def ini(self, ctx):
-        embed = discord.Embed(title='INI Resources', description='[INI Settings Breakdown](https://stepmodifications.org/wiki/Guide:Skyrim_Configuration_Settings#SkyrimPrefs.ini) \n [BethINI Download](https://www.nexusmods.com/skyrimspecialedition/mods/4875)')
+        embed = discord.Embed(title='INI Resources', description='[INI Settings Breakdown](https://stepmodifications.org/wiki/Guide:Skyrim_Configuration_Settings#SkyrimPrefs.ini) \n[BethINI Download](https://www.nexusmods.com/skyrimspecialedition/mods/4875) \n*Instructions for BethINI are on the mod page.*')
         await ctx.send(embed=embed)
 
     @commands.command(name='modlist')
     async def modlist(self, ctx):
-        embed = discord.Embed(title='Tools for Sharing Modlists', description='[Modwat.ch Download](https://modwat.ch/) \n[Modwat.ch for Vortex](https://www.nexusmods.com/site/mods/152) \n\n[Load Order Library](https://loadorderlibrary.com/)')
+        embed = discord.Embed(title='Tools for Sharing Modlists', description='[Modwat.ch Download](https://modwat.ch/) \n[Modwat.ch for Vortex](https://www.nexusmods.com/site/mods/152) \n[Load Order Library](https://loadorderlibrary.com/)')
         await ctx.send(embed=embed)
 
     @commands.command(name='ussep')
