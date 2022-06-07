@@ -155,7 +155,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='synthesis')
     async def synthesis(self, ctx):
-        embed = discord.Embed(title='Synthesis Patcher', description='[Download]{https://github.com/Mutagen-Modding/Synthesis/wiki/Installation) \n[Guide](https://www.youtube.com/watch?v=s7luh0hMMAU)')
+        embed = discord.Embed(title='Synthesis Patcher', description='[Download](https://github.com/Mutagen-Modding/Synthesis/wiki/Installation) \n[Guide](https://www.youtube.com/watch?v=s7luh0hMMAU)')
         await ctx.send(embed=embed)
 
     @commands.command(name='xbox')
