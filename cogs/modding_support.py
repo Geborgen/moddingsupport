@@ -105,7 +105,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='darkface')
     async def name(self, ctx):
-        embed = discord.Embed(title="Dark Face Bug Fix", description="[Dark Face Bug Info](https://www.reddit.com/r/skyrimmods/comments/n6gio6/guide_the_dark_face_bug_and_what_causes_it_and/) \n\n[Face Discoloration Fix Download](https://www.nexusmods.com/skyrimspecialedition/mods/42441) \n*Please not that this only fixes the dark tint, and doesn't fix the actual facegen issue.* \n\n[EasyNPC Download](https://www.nexusmods.com/skyrimspecialedition/mods/52313) \n*This tool will merge all your face data into one plugin.*")
+        embed = discord.Embed(title="Dark Face Bug Fix", description="[Info Board](https://www.reddit.com/r/skyrimmods/comments/n6gio6/guide_the_dark_face_bug_and_what_causes_it_and/) \n\n[Face Discoloration Fix Download](https://www.nexusmods.com/skyrimspecialedition/mods/42441) \n*Please note that this only fixes the dark tint, and doesn't fix the actual facegen issue.* \n\n[EasyNPC Download](https://www.nexusmods.com/skyrimspecialedition/mods/52313) \n*This tool will merge all of your face data into one plugin.*")
         await ctx.send(embed=embed)
 
     @commands.command(name='loadorder', aliases=['loot'])
