@@ -110,7 +110,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='loadorder', aliases=['loot'])
     async def loadorder(self, ctx):
-        embed = discord.Embed(title='Load Order Resources', description='[LOOT Download](https://loot.github.io/) \n[Load Order Structure Info](https://skyrimseblog.wordpress.com/load-order-structure/)')
+        embed = discord.Embed(title='Load Order Resources', description='[LOOT Download](https://loot.github.io/) \n[LOOT Basic Tutorial](https://www.youtube.com/watch?v=fyvwslyKiog) \n\n[Load Order Basics](https://www.youtube.com/watch?v=Ncv_FWQUw0k)\n[Load Order Structure Info](https://skyrimseblog.wordpress.com/load-order-structure/)')
         await ctx.send(embed=embed)
 
     @commands.command(name='corrupt', aliases=['fallrim'])
