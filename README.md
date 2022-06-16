@@ -5,7 +5,7 @@ Discord bot providing Nexus search functionality based off the r/skyrimmods modl
 
 The bot primarily operates in the [r/skyrim Discord](https://discord.com/invite/skyrim) and [Geb's World](https://discord.com/invite/WC9ZqcTsmd).
 
-[Click here to add to your server.](https://discord.com/api/oauth2/authorize?client_id=910688719097430066&permissions=274878023680&scope=bot)
+[Click here to add to your server.](https://top.gg/bot/910688719097430066)
 
 # Nexus Search
 To use the Nexus search functionality, input your query using {curly brackets} like so:
