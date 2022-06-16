@@ -5,7 +5,7 @@ Originally built for the [r/skyrim Discord server](https://discord.com/invite/sk
 
 [Direct invite link](https://discord.com/api/oauth2/authorize?client_id=910688719097430066&permissions=274877925376&scope=bot)
 
-#Nexus Search
+# Nexus Search
 To use the Nexus search functionality, input your query using {curly brackets} like so:
 ![foxdemo](https://i.imgur.com/klzeCdJ.png) 
 
