@@ -31,6 +31,8 @@ Some mods have acronyms, which you can input:
 
 Input "SOS" for something special.
 
+The search functionality was built conforming with Nexus's API and is fully legal and open source. It will NEVER allow pirated content to be shown. Message Geborgen#5954 or Arbigate#6162 with any concerns.
+
 # Support Commands
 The prefix is "-" and is currently unchangable.
 * -guide (beginner's modding guide)
