@@ -12,7 +12,7 @@ To use the Nexus search functionality, input your query using {curly brackets} l
 
 ![foxdemo](https://i.imgur.com/klzeCdJ.png)
 
-NSFW results will not appear. (There are a few exceptions for improperly marked mods, such as Enhanced Blood Textures)
+NSFW results will not appear.
 
 Some mods have acronyms, which you can input: 
 
