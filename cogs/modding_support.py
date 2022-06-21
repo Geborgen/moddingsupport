@@ -55,7 +55,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='crash')
     async def crash(self, ctx):
-        embed = discord.Embed(title='Crash Resources', description="Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/21294) mod to generate crash logs. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59596) instead if you're on AE. \n\n[Reading Crash Logs Tutorial](https://pastebin.com/q7fc8FvF) \n[Troubleshooting Checklist](https://pastebin.com/fLuwitW3) \n[Stability Guide](https://www.youtube.com/watch?v=ucJkYLyRMso)")
+        embed = discord.Embed(title='Crash Resources', description="Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/21294) mod to generate crash logs. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59596) instead if you're on AE. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59818) if you're on VR. \n\n[Reading Crash Logs Tutorial](https://pastebin.com/q7fc8FvF) \n[Troubleshooting Checklist](https://pastebin.com/fLuwitW3) \n[Stability Guide](https://www.youtube.com/watch?v=ucJkYLyRMso)")
         await ctx.send(embed=embed)
 
     @commands.command(name='modmanager')
