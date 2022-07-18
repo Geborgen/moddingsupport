@@ -47,7 +47,7 @@ se_modlink_exceptions = [
 common_acronyms = {
     'elfx': 'Enhanced Lights and FX',
     'nff': 'Nether Follower Framework',
-    'fnis': 'Nemesis',
+    'fnis': 'Nemesis Unlimited Behavior Engine',
     'ussep': 'Unofficial Skyrim Special Edition Patch',
     'mo2': 'Mod Organizer 2',
     'lotd': 'Legacy of the Dragonborn',
