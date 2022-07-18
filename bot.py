@@ -21,11 +21,14 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import os
 import discord
 import aiohttp
+import asyncio
 import re
 import random
 from discord.ext import commands
 from dotenv import load_dotenv
 from modlink import parse_query
+from reports import error_reaction
+from reports import deletion_reaction
 from modlink_exceptions import exceptions
 from modlink_exceptions import common_acronyms
 from modlink_exceptions import sos_acronym
@@ -35,7 +38,7 @@ from modlink_exceptions import false_adult
 
 SEARCH_REGEX = re.compile(r'{(.*?)}')
 intents = discord.Intents.default()
-extensions = ['cogs.modding_support', 'cogs.error_reporting']
+extensions = ['cogs.modding_support']
 load_dotenv()
 
 
@@ -111,20 +114,30 @@ class ModlinkBot(commands.Bot):
                 embed = discord.Embed(title=f'Search results for: "{query}"')
                 embed.add_field(name="Special Edition", value=f"[{modlink['name']}](https://www.nexusmods.com{modlink['url']})")
                 embed.add_field(name="Legendary Edition", value=f"[{le_modlink['name']}](https://www.nexusmods.com{le_modlink['url']})")
-                embed.set_footer(text="If the bot makes any mistake, use -error please; it helps improve the bot. For the source code, use \n-source")
-                await message.channel.send(embed=embed)
+                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
+                msg = await message.channel.send(embed=embed)
+                asyncio.create_task(error_reaction(self, msg))
+                asyncio.create_task(deletion_reaction(self, msg))
             elif le_modlink is not None:
                 embed = discord.Embed(title=f'Search results for: "{query}"')
                 embed.add_field(name="Legendary Edition", value=f"[{le_modlink['name']}](https://www.nexusmods.com{le_modlink['url']})")
-                embed.set_footer(text="If the bot makes any mistake, use -error please; it helps improve the bot. For the source code, use \n-source")
-                await message.channel.send(embed=embed)
+                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
+                msg = await message.channel.send(embed=embed)
+                asyncio.create_task(error_reaction(self, msg))
+                asyncio.create_task(deletion_reaction(self, msg))
             elif modlink is not None:
                 embed = discord.Embed(title=f'Search results for: "{query}"')
                 embed.add_field(name="Special Edition", value=f"[{modlink['name']}](https://www.nexusmods.com{modlink['url']})")
-                embed.set_footer(text="If the bot makes any mistake, use -error please; it helps improve the bot. For the source code, use \n-source")
-                await message.channel.send(embed=embed)
+                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
+                msg = await message.channel.send(embed=embed)
+                asyncio.create_task(error_reaction(self, msg))
+                asyncio.create_task(deletion_reaction(self, msg))
             else:
-                await message.channel.send(f'There were no results for: "{query}"')
+                embed = discord.Embed(title=f'There were no results for: "{query}"')
+                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
+                msg = await message.channel.send(embed=embed)
+                asyncio.create_task(error_reaction(self, msg))
+                asyncio.create_task(deletion_reaction(self, msg))
 
         await bot.process_commands(message)
 

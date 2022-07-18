@@ -18,8 +18,7 @@ exceptions = {
     'enb light': 'https://www.nexusmods.com/skyrimspecialedition/mods/22574',
     'sky idles': 'https://www.nexusmods.com/skyrimspecialedition/mods/45794',
     'wabbajack': 'https://www.wabbajack.org',
-    'open cities': 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/',
-    'nordic ui': 'https://www.nexusmods.com/skyrimspecialedition/mods/49881'
+    'open cities': 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
 }
 
 false_adult = [
@@ -28,14 +27,15 @@ false_adult = [
     'glenmoril',
     'wico',
     'enhanced blood textures',
-    'xpmsse'
+    'fallrim'
 ]
 
 le_modlink_exceptions = [
     'skyrim 2020',
     'skyrim 2020 parallax',
     'pi-cho',
-    'wico'
+    'wico',
+    'the vanilla enb'
 ]
 
 se_modlink_exceptions = [
@@ -45,16 +45,19 @@ se_modlink_exceptions = [
 common_acronyms = {
     'elfx': 'Enhanced Lights and FX',
     'nff': 'Nether Follower Framework',
+    'fnis': 'Nemesis',
     'ussep': 'Unofficial Skyrim Special Edition Patch',
     'mo2': 'Mod Organizer 2',
     'lotd': 'Legacy of the Dragonborn',
     'icow': 'Immersive College of Winterhold',
     'nemesis': 'Nemesis Unlimited Behavior Engine',
+    'skysight': 'Skysight Skins',
     'cgo': 'Combat Gameplay Overhaul',
     'mbo': 'Movement Behavior Overhaul',
     'jbo': 'Jump Behavior Overhaul',
     'tdm': 'True Directional Movement',
-    'dar': 'Dynamic Animation Replacer'
+    'dar': 'Dynamic Animation Replacer',
+    'vanilla enb': 'The Vanilla ENB'
 }
 
 sos_acronym = {
