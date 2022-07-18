@@ -18,7 +18,8 @@ exceptions = {
     'enb light': 'https://www.nexusmods.com/skyrimspecialedition/mods/22574',
     'sky idles': 'https://www.nexusmods.com/skyrimspecialedition/mods/45794',
     'wabbajack': 'https://www.wabbajack.org',
-    'open cities': 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/'
+    'open cities': 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/',
+    'nordic ui': 'https://www.nexusmods.com/skyrimspecialedition/mods/49881'
 }
 
 false_adult = [
