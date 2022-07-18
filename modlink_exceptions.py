@@ -27,7 +27,8 @@ false_adult = [
     'glenmoril',
     'wico',
     'enhanced blood textures',
-    'fallrim'
+    'fallrim',
+    'xpmsse'
 ]
 
 le_modlink_exceptions = [
