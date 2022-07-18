@@ -51,7 +51,7 @@ async def deletion_reaction(self, message):
     await message.add_reaction('\N{CROSS MARK}')
 
     def check(reaction, user):
-        return str(user.id) in elevated_users.keys() and str(reaction.emoji) in ['\N{CROSS MARK}']
+        return str(user.id) in elevated_users.keys() and reaction.message == message and str(reaction.emoji) in ['\N{CROSS MARK}']
 
     try:
         reaction, user = await self.wait_for("reaction_add", timeout=20, check=check)
@@ -66,7 +66,7 @@ async def error_reaction(self, message):
     await message.add_reaction('\N{WHITE QUESTION MARK ORNAMENT}')
 
     def check(reaction, user):
-        return user != self.user and str(reaction.emoji) in ['\N{WHITE QUESTION MARK ORNAMENT}']
+        return user != self.user and reaction.message == message and str(reaction.emoji) in ['\N{WHITE QUESTION MARK ORNAMENT}']
 
     try:
         reaction, user = await self.wait_for("reaction_add", timeout=20, check=check)
