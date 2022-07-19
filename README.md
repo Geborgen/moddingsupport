@@ -7,7 +7,9 @@ Originally built for the [r/skyrim Discord server](https://discord.com/invite/sk
 
 # Nexus Search
 To use the Nexus search functionality, input your query using {curly brackets} like so:
-![foxdemo](https://i.imgur.com/klzeCdJ.png) 
+![foxdemo](https://i.imgur.com/NeKy9Qc.png) 
+
+Click the ? to report an error and the X to delete the embed.
 
 NSFW results will not appear.
 
