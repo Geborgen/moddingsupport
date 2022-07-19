@@ -88,6 +88,8 @@ class ModlinkBot(commands.Bot):
         if len(queries) > 5:
             return await message.channel.send('You cannot link more than 5 mods in a message.')
         for query in queries:
+            if len(query) == 0:
+                continue
             if query.lower() == "sos":
                 random_sos = random.choice(list(sos_acronym))
                 exceptions_embed = discord.Embed(title=str(random_sos))
