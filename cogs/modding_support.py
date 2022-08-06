@@ -11,7 +11,6 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-
 import discord
 import random
 from discord.ext import commands
@@ -38,9 +37,14 @@ class ModdingSupport(commands.Cog):
         embed.set_image(url='https://i.imgur.com/E2HoLOc.png')
         await ctx.send(embed=embed)
 
-    @commands.command(name='ae', aliases=['downgrade'])
+    @commands.command(name='ae')
     async def ae(self, ctx):
-        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.353**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.353 unless it has been updated by the author. At this point, most mods are updated. \n\nYou can use [this](https://www.nexusmods.com/skyrimspecialedition/mods/57618) tool to downgrade your game. It's fairly straightforward, but instructions are [here](https://www.youtube.com/watch?v=r2XSWUkOKz0) if needed. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility.")
+        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.353**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.353 unless it has been updated by the author. At this point, most mods are updated. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility. \n\nIs is possible to downgrade your game (not recommended for average users). See -downgrade for more info.")
+        await ctx.send(embed=embed)
+
+    @commands.command(name='downgrade')
+    async def downgrade(self, ctx):
+        embed = discord.Embed(title='How to Downgrade', description='It is possible to downgrade your game from 1.6.353 to 1.5.97 for mod compatibility. This is becoming more and more obsolete as more mods get updated, but the option is still avaiable. \n\n[Downgrade Patcher](https://www.nexusmods.com/skyrimspecialedition/mods/57618) \n[Instructions](https://www.youtube.com/watch?v=r2XSWUkOKz0)')
         await ctx.send(embed=embed)
 
     @commands.command(name='version')
@@ -150,7 +154,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='ussep')
     async def ussep(self, ctx):
-        embed = discord.Embed(title='Unofficial Skyrim Special Edition Patch', description='[USSEP Download](https://www.nexusmods.com/skyrimspecialedition/mods/266) \n[Old Version (pre-AE)](https://www.nexusmods.com/Core/Libs/Common/Widgets/DownloadPopUp?id=209150&game_id=1704)')
+        embed = discord.Embed(title='Unofficial Skyrim Special Edition Patch', description='[USSEP Download](https://www.nexusmods.com/skyrimspecialedition/mods/266) \n[Old Version (pre-AE)](https://www.nexusmods.com/Core/Libs/Common/Widgets/DownloadPopUp?id=209150&game_id=1704) \n[Non-Arthmoor Alternatives](https://www.reddit.com/r/skyrimmods/comments/usamua/unarthmoored_ussep_compendium/)')
         await ctx.send(embed=embed)
 
     @commands.command(name='tudm')
@@ -201,7 +205,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='help')
     async def help(self, ctx, pages = None):
-        help_body = ["-guide (beginner's modding guide) \n-skse (SKSE tutorial) \n-ae / -downgrade (information about AE) \n-version (breaks down the versions of the game) \n-porting / -converting (tutorial for porting mods) \n-crash (what to do in the event of a crash) \n-modmanager (mod manager comparison) \n-reinstall (how to correctly reinstall the game) \n-laws (10 Commandments of Modding™️)", "-nemesis (tutorial for Nemesis engine) \n-dyndolod (tutorial for DynDOLOD) \n-cleaning (xEdit plugin cleaning) \n-navmesh (fixing deleted navmesh) \n-eslify (ESL flagging plugins) \n-vanillastart (broken vanilla intro fix) \n-darkface (dark face bug fix) \n-loadorder / -loot (load order resources) \n-corrupt / -fallrim (corrupted save game resources)", "-essentials (list of essential mods) \n-script (script info board) \n-modlimit (mod limit info board) \n-enb (ENB info board) \n-ini (ini resources) \n-modlist (modlist sharing resources) \n-ussep (link to USSEP) \n-tudm (link to TUDM) \n-synthesis (link to Synthesis patcher) \n-xbox (Xbox mod recommendations) \n-ps4 (PlayStation mod recommendations)", "-sinitar (essay on Sinitar) \n-sos (returns a random 'SOS' mod) \n-rtfm (read the [redacted] manual) \n-tryitandsee (please do this) \n-dontasktoask (seriously, just ask your question) \n-stefan (ignore him)"]
+        help_body = ["-guide (beginner's modding guide) \n-skse (SKSE tutorial) \n-ae (information about AE) \n-downgrade (downgrading game tutorial) \n-version (breaks down the versions of the game) \n-porting / -converting (tutorial for porting mods) \n-crash (what to do in the event of a crash) \n-modmanager (mod manager comparison) \n-reinstall (how to correctly reinstall the game) \n-laws (10 Commandments of Modding™️)", "-nemesis (tutorial for Nemesis engine) \n-dyndolod (tutorial for DynDOLOD) \n-cleaning (xEdit plugin cleaning) \n-navmesh (fixing deleted navmesh) \n-eslify (ESL flagging plugins) \n-vanillastart (broken vanilla intro fix) \n-darkface (dark face bug fix) \n-loadorder / -loot (load order resources) \n-corrupt / -fallrim (corrupted save game resources)", "-essentials (list of essential mods) \n-script (script info board) \n-modlimit (mod limit info board) \n-enb (ENB info board) \n-ini (ini resources) \n-modlist (modlist sharing resources) \n-ussep (link to USSEP) \n-tudm (link to TUDM) \n-synthesis (link to Synthesis patcher) \n-xbox (Xbox mod recommendations) \n-ps4 (PlayStation mod recommendations)", "-sinitar (essay on Sinitar) \n-sos (returns a random 'SOS' mod) \n-rtfm (read the [redacted] manual) \n-tryitandsee (please do this) \n-dontasktoask (seriously, just ask your question) \n-stefan (ignore him)"]
         try:
             if pages is None:
                 embed = discord.Embed(title='Modding Support Help', description=help_body[0])
@@ -219,8 +223,6 @@ class ModdingSupport(commands.Cog):
     @commands.command(name='ping')
     async def ping(self, ctx):
         await ctx.send(f':ping_pong: Pong! Bot latency is ``{round(self.bot.latency*1000)} ms``')
-
-
 
 #NOTE: USE THIS FORMAT WHEN ADDING NEW COMMANDS:
 
