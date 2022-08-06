@@ -16,6 +16,7 @@ import asyncio
 import discord
 
 ARBIGATE = 668828647653638174
+GEBORGEN = 358998624295714816
 
 elevated_users = {
     '668828647653638174': 'Arbigate',
@@ -25,14 +26,15 @@ elevated_users = {
     '358998624295714816': 'Geborgen',
     '269261628099264523': 'Val',
     '861116755781877790': 'Olivinism',
-    '397336803054714891': 'Fox'
+    '397336803054714891': 'Fox',
+    '882139549084557332': 'Shizar'
 }
 
 
 async def error_report(self, message, user):
-    dev = self.get_user(ARBIGATE)
+    dev = self.get_user(GEBORGEN)
     if dev is None:
-        dev = await self.fetch_user(ARBIGATE)
+        dev = await self.fetch_user(GEBORGEN)
 
     embeds = message.embeds
     for embed in embeds:
