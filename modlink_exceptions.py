@@ -20,7 +20,8 @@ exceptions = {
     'wabbajack': 'https://www.wabbajack.org',
     'open cities': 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/',
     'nordic ui': 'https://www.nexusmods.com/skyrimspecialedition/mods/49881',
-    'qui' : 'https://www.nexusmods.com/skyrimspecialedition/mods/65343'
+    'qui': 'https://www.nexusmods.com/skyrimspecialedition/mods/65343'
+    'ebony knight armor': 'https://www.nexusmods.com/skyrimspecialedition/mods/68062'
 }
 
 false_adult = [
@@ -29,9 +30,11 @@ false_adult = [
     'glenmoril',
     'wico',
     'enhanced blood textures',
-    'enhanced blood',
     'fallrim',
-    'xpmsse'
+    'xpmsse',
+    'dummy thicc - flame atronach',
+    'highly improved male body overhaul -himbo-',
+    'gorecap'
 ]
 
 le_modlink_exceptions = [
