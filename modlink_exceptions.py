@@ -21,7 +21,9 @@ exceptions = {
     'open cities': 'https://www.afkmods.com/index.php?/files/file/1905-open-cities-skyrim/',
     'nordic ui': 'https://www.nexusmods.com/skyrimspecialedition/mods/49881',
     'qui': 'https://www.nexusmods.com/skyrimspecialedition/mods/65343',
-    'ebony knight armor': 'https://www.nexusmods.com/skyrimspecialedition/mods/68062'
+    'ebony knight armor': 'https://www.nexusmods.com/skyrimspecialedition/mods/68062',
+    'shield of stamina': 'https://www.nexusmods.com/skyrimspecialedition/mods/62137',
+    'nature of the wild lands': 'https://www.nexusmods.com/skyrimspecialedition/mods/63604'
 }
 
 false_adult = [
