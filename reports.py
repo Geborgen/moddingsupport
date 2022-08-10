@@ -32,9 +32,9 @@ elevated_users = {
 
 
 async def error_report(self, message, user):
-    dev = self.get_user(GEBORGEN)
+    dev = self.get_user(ARBIGATE)
     if dev is None:
-        dev = await self.fetch_user(GEBORGEN)
+        dev = await self.fetch_user(ARBIGATE)
 
     embeds = message.embeds
     for embed in embeds:
