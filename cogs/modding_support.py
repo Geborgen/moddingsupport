@@ -39,7 +39,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='ae')
     async def ae(self, ctx):
-        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.353**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.353 unless it has been updated by the author. At this point, most mods are updated. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility. \n\nIt is possible to downgrade your game (not recommended for average users). See -downgrade for more info.")
+        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.353**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.353 unless it has been updated by the author. At this point, most mods are updated. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility. \n\nIt is possible to downgrade your game (not recommended for average users). \nSee -downgrade for more info.")
         await ctx.send(embed=embed)
 
     @commands.command(name='downgrade')
