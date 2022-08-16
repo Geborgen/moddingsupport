@@ -44,7 +44,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='downgrade')
     async def downgrade(self, ctx):
-        embed = discord.Embed(title='How to Downgrade', description='It is possible to downgrade your game from 1.6.353 to 1.5.97 for mod compatibility. This is becoming more and more obsolete as more mods get updated, but the option is still avaiable. \n\n[Downgrade Patcher](https://www.nexusmods.com/skyrimspecialedition/mods/57618) \n[Instructions](https://www.youtube.com/watch?v=r2XSWUkOKz0)')
+        embed = discord.Embed(title='How to Downgrade', description='It is possible to downgrade your game from 1.6.353 to 1.5.97 for mod compatibility. This is becoming more and more obsolete as more mods get updated, but the option is still avaiable. \n\n[Downgrade Patcher Download](https://www.nexusmods.com/skyrimspecialedition/mods/57618) \n[Instructions](https://www.youtube.com/watch?v=r2XSWUkOKz0)')
         await ctx.send(embed=embed)
 
     @commands.command(name='version')
