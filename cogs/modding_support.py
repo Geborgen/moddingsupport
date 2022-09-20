@@ -15,6 +15,7 @@ import discord
 import random
 from discord.ext import commands
 from modlink_exceptions import sos_acronym
+from modlink_exceptions import gamepass_gif
 
 
 class ModdingSupport(commands.Cog):
@@ -59,7 +60,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='crash')
     async def crash(self, ctx):
-        embed = discord.Embed(title='Crash Resources', description="Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/21294) mod to generate crash logs. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59596) instead if you're on AE. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59818) if you're on VR. \n\n[Reading SE Crash Logs Tutorial](https://pastebin.com/q7fc8FvF) \n[Reading AE Crash Logs Tutorial](https://www.nexusmods.com/skyrimspecialedition/mods/75430) \n[Troubleshooting Checklist](https://pastebin.com/fLuwitW3) \n[Stability Guide](https://www.youtube.com/watch?v=ucJkYLyRMso)")
+        embed = discord.Embed(title='Crash Resources', description="Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/21294) mod to generate crash logs. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59596) instead if you're on AE. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59818) if you're on VR. \n\n[Reading SE Crash Logs Tutorial](https://pastebin.com/q7fc8FvF) \n[Reading AE Crash Logs Tutorial](https://www.nexusmods.com/skyrimspecialedition/mods/75430) \n[Common Crashes & Fixes](https://www.nexusmods.com/skyrimspecialedition/mods/49130) \n[Troubleshooting Checklist](https://pastebin.com/fLuwitW3) \n[Stability Guide](https://www.youtube.com/watch?v=ucJkYLyRMso)")
         await ctx.send(embed=embed)
 
     @commands.command(name='modmanager')
@@ -187,6 +188,11 @@ class ModdingSupport(commands.Cog):
         random_sos = random.choice(list(sos_acronym))
         await ctx.send(random_sos)
 
+    @commands.command(name='gamepass')
+    async def gamepass(self, ctx):
+        gamepass_meme = random.choice(list(gamepass_gif))
+        await ctx.send(gamepass_meme)
+
     @commands.command(name='rtfm')
     async def rtfm(self, ctx):
         await ctx.send('https://i.imgur.com/k3qSKbl.png')
@@ -205,7 +211,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='help')
     async def help(self, ctx, pages = None):
-        help_body = ["-guide (beginner's modding guide) \n-skse (SKSE tutorial) \n-ae (information about AE) \n-downgrade (downgrading game tutorial) \n-version (breaks down the versions of the game) \n-porting / -converting (tutorial for porting mods) \n-crash (what to do in the event of a crash) \n-modmanager (mod manager comparison) \n-reinstall (how to correctly reinstall the game) \n-laws (10 Commandments of Modding™️)", "-nemesis (tutorial for Nemesis engine) \n-dyndolod (tutorial for DynDOLOD) \n-cleaning (xEdit plugin cleaning) \n-navmesh (fixing deleted navmesh) \n-eslify (ESL flagging plugins) \n-vanillastart (broken vanilla intro fix) \n-darkface (dark face bug fix) \n-loadorder / -loot (load order resources) \n-corrupt / -fallrim (corrupted save game resources)", "-essentials (list of essential mods) \n-script (script info board) \n-modlimit (mod limit info board) \n-enb (ENB info board) \n-ini (ini resources) \n-modlist (modlist sharing resources) \n-ussep (link to USSEP) \n-tudm (link to TUDM) \n-synthesis (link to Synthesis patcher) \n-xbox (Xbox mod recommendations) \n-ps4 (PlayStation mod recommendations)", "-sinitar (essay on Sinitar) \n-sos (returns a random 'SOS' mod) \n-rtfm (read the [redacted] manual) \n-tryitandsee (please do this) \n-dontasktoask (seriously, just ask your question) \n-stefan (ignore him)"]
+        help_body = ["-guide (beginner's modding guide) \n-skse (SKSE tutorial) \n-ae (information about AE) \n-downgrade (downgrading game tutorial) \n-version (breaks down the versions of the game) \n-porting / -converting (tutorial for porting mods) \n-crash (what to do in the event of a crash) \n-modmanager (mod manager comparison) \n-reinstall (how to correctly reinstall the game) \n-laws (10 Commandments of Modding™️)", "-nemesis (tutorial for Nemesis engine) \n-dyndolod (tutorial for DynDOLOD) \n-cleaning (xEdit plugin cleaning) \n-navmesh (fixing deleted navmesh) \n-eslify (ESL flagging plugins) \n-vanillastart (broken vanilla intro fix) \n-darkface (dark face bug fix) \n-loadorder / -loot (load order resources) \n-corrupt / -fallrim (corrupted save game resources)", "-essentials (list of essential mods) \n-script (script info board) \n-modlimit (mod limit info board) \n-enb (ENB info board) \n-ini (ini resources) \n-modlist (modlist sharing resources) \n-ussep (link to USSEP) \n-tudm (link to TUDM) \n-synthesis (link to Synthesis patcher) \n-xbox (Xbox mod recommendations) \n-ps4 (PlayStation mod recommendations)", "-sinitar (essay on Sinitar) \n-sos (returns a random 'SOS' mod) \n-gamepass (SKSE does not work on it) \n-rtfm (read the [redacted] manual) \n-tryitandsee (please do this) \n-dontasktoask (seriously, just ask your question) \n-stefan (ignore him)"]
         try:
             if pages is None:
                 embed = discord.Embed(title='Modding Support Help', description=help_body[0])
