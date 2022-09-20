@@ -50,7 +50,7 @@ The prefix is ``-`` and is currently unchangeable.
    * -ps4 (PlayStation mod recommendations)
    * -sinitar (essay on Sinitar)
    * -sos (returns a random 'SOS' mod)
-   * -gamepass (skse does not work on it)
+   * -gamepass (SKSE does not work on it)
    * -rtfm (read the [redacted] manual)
    * -tryitandsee (please do this)
    * -dontasktoask (seriously, just ask your question)
