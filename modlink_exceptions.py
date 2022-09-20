@@ -23,7 +23,11 @@ exceptions = {
     'qui': 'https://www.nexusmods.com/skyrimspecialedition/mods/65343',
     'ebony knight armor': 'https://www.nexusmods.com/skyrimspecialedition/mods/68062',
     'shield of stamina': 'https://www.nexusmods.com/skyrimspecialedition/mods/62137',
-    'nature of the wild lands': 'https://www.nexusmods.com/skyrimspecialedition/mods/63604'
+    'nature of the wild lands': 'https://www.nexusmods.com/skyrimspecialedition/mods/63604',
+    'scar': 'https://www.nexusmods.com/skyrimspecialedition/mods/72014',
+    'animated poisons': 'https://www.nexusmods.com/skyrimspecialedition/mods/72849',
+    'static mesh improvement mod improvement mod': 'https://www.nexusmods.com/skyrimspecialedition/mods/55543',
+    'heartbreaker': 'https://www.nexusmods.com/skyrimspecialedition/mods/1847'
 }
 
 false_adult = [
@@ -36,7 +40,8 @@ false_adult = [
     'xpmsse',
     'dummy thicc - flame atronach',
     'highly improved male body overhaul -himbo-',
-    'gorecap'
+    'gorecap',
+    'dx celes nightingale'
 ]
 
 le_modlink_exceptions = [
