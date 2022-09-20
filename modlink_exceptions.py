@@ -117,3 +117,11 @@ sos_acronym = {
     'Sweeping Organizes Stuff': 'https://www.nexusmods.com/skyrimspecialedition/mods/51645',
     'Sword of Shadow': 'https://www.nexusmods.com/skyrimspecialedition/mods/60766'
 }
+
+gamepass_gif = [
+    'https://cdn.discordapp.com/attachments/806307229182984202/1016099201119174667/IMG_5618.gif',
+    'https://cdn.discordapp.com/attachments/806307229182984202/1016100862613016587/IMG_5620.gif',
+    'https://cdn.discordapp.com/attachments/806307229182984202/1016139114170564648/IMG_5622.gif',
+    'https://cdn.discordapp.com/attachments/806307229182984202/1016194553348370452/IMG_5625.gif',
+    'https://cdn.discordapp.com/attachments/806307229182984202/1016194832479297566/IMG_5626.gif'
+]
