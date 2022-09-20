@@ -20,7 +20,8 @@ The prefix is ``-`` and is currently unchangeable.
 
    * -guide (beginner's modding guide)
    * -skse (SKSE tutorial)
-   * -ae / -downgrade (information about AE)
+   * -ae (information about AE)
+   * -downgrade (downgrading game tutorial)
    * -version (breaks down the versions of the game)
    * -porting / -converting (tutorial for porting mods)
    * -crash (what to do in the event of a crash)
@@ -49,6 +50,7 @@ The prefix is ``-`` and is currently unchangeable.
    * -ps4 (PlayStation mod recommendations)
    * -sinitar (essay on Sinitar)
    * -sos (returns a random 'SOS' mod)
+   * -gamepass (skse does not work on it)
    * -rtfm (read the [redacted] manual)
    * -tryitandsee (please do this)
    * -dontasktoask (seriously, just ask your question)
