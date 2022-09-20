@@ -39,12 +39,12 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='ae')
     async def ae(self, ctx):
-        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.353**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.353 unless it has been updated by the author. At this point, most mods are updated. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility. \n\nIt is possible to downgrade your game (not recommended for average users). \nSee -downgrade for more info.")
+        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.640**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.640 unless it has been updated by the author. At this point, most mods are updated. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility. \n\nIt is possible to downgrade your game (not recommended for average users). \nSee -downgrade for more info.")
         await ctx.send(embed=embed)
 
     @commands.command(name='downgrade')
     async def downgrade(self, ctx):
-        embed = discord.Embed(title='How to Downgrade', description='It is possible to downgrade your game from 1.6.353 to 1.5.97 for mod compatibility. This is becoming more and more obsolete as more mods get updated, but the option is still avaiable. \n\n[Downgrade Patcher Download](https://www.nexusmods.com/skyrimspecialedition/mods/57618) \n[Instructions](https://www.youtube.com/watch?v=r2XSWUkOKz0)')
+        embed = discord.Embed(title='How to Downgrade', description='It is possible to downgrade your game from 1.6.640 to 1.5.97 for mod compatibility. This is becoming more and more obsolete as more mods get updated, but the option is still avaiable. \n\n[Downgrade Patcher Download](https://www.nexusmods.com/skyrimspecialedition/mods/57618) \n[Instructions](https://www.youtube.com/watch?v=r2XSWUkOKz0)')
         await ctx.send(embed=embed)
 
     @commands.command(name='version')
@@ -59,7 +59,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='crash')
     async def crash(self, ctx):
-        embed = discord.Embed(title='Crash Resources', description="Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/21294) mod to generate crash logs. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59596) instead if you're on AE. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59818) if you're on VR. \n\n[Reading Crash Logs Tutorial](https://pastebin.com/q7fc8FvF) \n[Troubleshooting Checklist](https://pastebin.com/fLuwitW3) \n[Stability Guide](https://www.youtube.com/watch?v=ucJkYLyRMso)")
+        embed = discord.Embed(title='Crash Resources', description="Use [this](https://www.nexusmods.com/skyrimspecialedition/mods/21294) mod to generate crash logs. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59596) instead if you're on AE. \nUse [this](https://www.nexusmods.com/skyrimspecialedition/mods/59818) if you're on VR. \n\n[Reading SE Crash Logs Tutorial](https://pastebin.com/q7fc8FvF) \n[Reading AE Crash Logs Tutorial](https://www.nexusmods.com/skyrimspecialedition/mods/75430) \n[Troubleshooting Checklist](https://pastebin.com/fLuwitW3) \n[Stability Guide](https://www.youtube.com/watch?v=ucJkYLyRMso)")
         await ctx.send(embed=embed)
 
     @commands.command(name='modmanager')
