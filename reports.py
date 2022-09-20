@@ -31,16 +31,17 @@ elevated_users = {
 }
 
 
-async def error_report(self, message, user):
-    dev = self.get_user(ARBIGATE)
+async def error_report(self, message, user, guild):
+    dev = self.get_user(GEBORGEN)
     if dev is None:
-        dev = await self.fetch_user(ARBIGATE)
+        dev = await self.fetch_user(GEBORGEN)
 
     embeds = message.embeds
     for embed in embeds:
         incorrect_message = embed.to_dict()
         error_embed = discord.Embed(title="Error Report")
         error_embed.add_field(name='Reporter:', value=str(user), inline=False)
+        error_embed.add_field(name='Guild:', value=str(user.guild), inline=False)
         error_embed.add_field(name='Query:', value=incorrect_message['title'], inline=False)
         if 'fields' in incorrect_message.keys():
             error_embed.add_field(name='Fields:', value=incorrect_message['fields'])
@@ -58,7 +59,7 @@ async def deletion_reaction(self, message):
     try:
         reaction, user = await self.wait_for("reaction_add", timeout=20, check=check)
         if str(reaction.emoji) == '\N{CROSS MARK}':
-            await error_report(self, message, user)
+            await error_report(self, message, user, user.guild)
             await message.delete()
     except asyncio.TimeoutError:
         await message.remove_reaction('\N{CROSS MARK}', self.user)
@@ -73,7 +74,7 @@ async def error_reaction(self, message):
     try:
         reaction, user = await self.wait_for("reaction_add", timeout=20, check=check)
         if str(reaction.emoji) == '\N{WHITE QUESTION MARK ORNAMENT}':
-            await error_report(self, message, user)
+            await error_report(self, message, user, user.guild)
             await message.channel.send("The error was reported. Thank you!")
             await message.remove_reaction('\N{WHITE QUESTION MARK ORNAMENT}', self.user)
     except asyncio.TimeoutError:
