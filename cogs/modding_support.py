@@ -1,4 +1,4 @@
-"""
+-"""
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
 published by the Free Software Foundation, either version 3 of the
@@ -40,7 +40,7 @@ class ModdingSupport(commands.Cog):
 
     @commands.command(name='ae')
     async def ae(self, ctx):
-        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.640**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.640 unless it has been updated by the author. At this point, most mods are updated. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility. \n\nIt is possible to downgrade your game (not recommended for average users). \nSee -downgrade for more info.")
+        embed = discord.Embed(title='AE Info Board', description="The Anniversary Edition *update* was forced for ALL users, while the *upgrade* is a new DLC that includes CC content. Everyone has the AE update, which brings your game version from **1.5.97** to **1.6.640**. \n\nAny mod that uses an SKSE DLL will not work on AE 1.6.640 unless it has been updated by the author. At this point, most mods are updated. \n\nMake sure your SKSE mods match your game version. You can check by seeing what file you downloaded, usually they will indicate AE compatibility. \n\n[SKSE Plugin Status](https://modding.wiki/en/skyrim/users/skse-plugins) \n\nIt is possible to downgrade your game (not recommended for average users). \nSee -downgrade for more info.")
         await ctx.send(embed=embed)
 
     @commands.command(name='downgrade')
