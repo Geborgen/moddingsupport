@@ -59,7 +59,6 @@ async def deletion_reaction(self, message):
     try:
         reaction, user = await self.wait_for("reaction_add", timeout=20, check=check)
         if str(reaction.emoji) == '\N{CROSS MARK}':
-            await error_report(self, message, user, user.guild)
             await message.delete()
     except asyncio.TimeoutError:
         await message.remove_reaction('\N{CROSS MARK}', self.user)
