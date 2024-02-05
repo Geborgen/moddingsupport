@@ -3,7 +3,8 @@ Copyright notice:
 
 Parts of this code are based on https://github.com/JonathanFeenstra/discord-modlinkbot:
 
-Copyright (C) 2019-2021 Jonathan Feenstra
+Copyright (C) 2019-2023 Jonathan Feenstra
+Copyright (C) 2022-2023 Arbigate
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -12,144 +13,69 @@ License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
+
 import os
 import discord
 import aiohttp
-import asyncio
-import re
-import random
 from discord.ext import commands
 from dotenv import load_dotenv
-from modlink import parse_query
-from reports import error_reaction
-from reports import deletion_reaction
-from modlink_exceptions import exceptions
-from modlink_exceptions import common_acronyms
-from modlink_exceptions import sos_acronym
-from modlink_exceptions import le_modlink_exceptions
-from modlink_exceptions import se_modlink_exceptions
-from modlink_exceptions import false_adult
+from nexus_search import RequestHandler
+from cogs.modding_support import HelpCommand
 
-SEARCH_REGEX = re.compile(r'{(.*?)}')
-intents = discord.Intents.default()
-extensions = ['cogs.modding_support']
 load_dotenv()
+extensions = ['cogs.modlink', 'cogs.modding_support', 'cogs.bot_battle_commands']
+ERROR_CHANNEL_ID = 1056028135377874954
+ARCHITECT_CHANNEL = 806307229182984202
 
 
-class ModlinkBot(commands.Bot):
-
+class ModLink(commands.Bot):
     def __init__(self):
-        super().__init__(command_prefix='-', intents=intents, help_command=None)
+        super().__init__(
+            command_prefix='-',
+            help_command=HelpCommand(),
+            intents=discord.Intents(
+                guilds=True, members=True, message_content=True, guild_messages=True
+            ),
+            )
+
+    async def setup_hook(self):
         self.loop.create_task(self.startup())
+
+        for extension in extensions:
+            await bot.load_extension(extension)
 
     async def startup(self):
         self.session = aiohttp.ClientSession()
+        self.error_channel = self.get_channel(ERROR_CHANNEL_ID) or await self.fetch_channel(ERROR_CHANNEL_ID)
+        self.architect_channel = self.get_channel(ARCHITECT_CHANNEL) or await self.fetch_channel(ARCHITECT_CHANNEL)
+        await self.initialize_request_handler()
 
     async def close(self):
         await self.session.close()
         await super().close()
-    
-    async def get_modlink(self, query, include_adult=False):
-        if query.lower() not in se_modlink_exceptions:
-            async with self.session.get("https://search.nexusmods.com/mods", params={"terms": parse_query(query), "game_id": 1704, "include_adult": str(include_adult).lower()}) as resp:
-                if resp.status == 200:
-                    data = await resp.json()
-                    results = data["results"]
-                    if results:
-                        return results[0]
-        else:
-            return
 
-    async def get_le_modlink(self, query, include_adult=False):
-        if query.lower() not in le_modlink_exceptions:
-            async with self.session.get("https://search.nexusmods.com/mods", params={"terms": parse_query(query), "game_id": 110, "include_adult": str(include_adult).lower()}) as resp:
-                if resp.status == 200:
-                    data = await resp.json()
-                    results = data["results"]
-                    if results:
-                        return results[0]
-        else:
-            return
-
-    async def on_ready(self):
-        print('Logged in as {0.user}'.format(self))
-
-    async def on_message(self, message):
-        if message.author == self.user:
-            return
-
-        queries = SEARCH_REGEX.findall(message.content)
-        if len(queries) > 5:
-            return await message.channel.send('You cannot link more than 5 mods in a message.')
-        for query in queries:
-            if len(query) == 0:
-                continue
-            if query.lower() == "sos":
-                random_sos = random.choice(list(sos_acronym))
-                exceptions_embed = discord.Embed(title=str(random_sos))
-                exceptions_embed.add_field(name="-", value=sos_acronym[random_sos])
-                exceptions_embed.set_footer(text="If the bot makes any mistake, use -error please; it helps improve the bot. For the source code, use \n-source")
-                await message.channel.send(embed=exceptions_embed)
-                continue
-            if query.lower() in exceptions.keys():
-                exceptions_embed = discord.Embed(title=f'Search results for: "{query}"')
-                exceptions_embed.add_field(name="Special Edition", value=f"[{query.title()}]({exceptions[query.lower()]})")
-                exceptions_embed.set_footer(text="If the bot makes any mistake, use -error please; it helps improve the bot. For the source code, use \n-source")
-                await message.channel.send(embed=exceptions_embed)
-                continue
-            if query.lower() in false_adult:
-                modlink = await self.get_modlink(query, True)
-                le_modlink = await self.get_le_modlink(query, True)
-            elif query.lower() in common_acronyms.keys():
-                modlink = await self.get_modlink(common_acronyms[query.lower()])
-                le_modlink = await self.get_le_modlink(common_acronyms[query.lower()])
-            else:
-                modlink = await self.get_modlink(query)
-                le_modlink = await self.get_le_modlink(query)
-            if modlink is not None and le_modlink is not None:
-                embed = discord.Embed(title=f'Search results for: "{query}"')
-                embed.add_field(name="Special Edition", value=f"[{modlink['name']}](https://www.nexusmods.com{modlink['url']})")
-                embed.add_field(name="Legendary Edition", value=f"[{le_modlink['name']}](https://www.nexusmods.com{le_modlink['url']})")
-                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
-                msg = await message.channel.send(embed=embed)
-                asyncio.create_task(error_reaction(self, msg))
-                asyncio.create_task(deletion_reaction(self, msg))
-            elif le_modlink is not None:
-                embed = discord.Embed(title=f'Search results for: "{query}"')
-                embed.add_field(name="Legendary Edition", value=f"[{le_modlink['name']}](https://www.nexusmods.com{le_modlink['url']})")
-                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
-                msg = await message.channel.send(embed=embed)
-                asyncio.create_task(error_reaction(self, msg))
-                asyncio.create_task(deletion_reaction(self, msg))
-            elif modlink is not None:
-                embed = discord.Embed(title=f'Search results for: "{query}"')
-                embed.add_field(name="Special Edition", value=f"[{modlink['name']}](https://www.nexusmods.com{modlink['url']})")
-                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
-                msg = await message.channel.send(embed=embed)
-                asyncio.create_task(error_reaction(self, msg))
-                asyncio.create_task(deletion_reaction(self, msg))
-            else:
-                embed = discord.Embed(title=f'There were no results for: "{query}"')
-                embed.set_footer(text="If the bot makes any mistakes when linking mods, please click the \N{WHITE QUESTION MARK ORNAMENT} reaction.")
-                msg = await message.channel.send(embed=embed)
-                asyncio.create_task(error_reaction(self, msg))
-                asyncio.create_task(deletion_reaction(self, msg))
-
-        await bot.process_commands(message)
+    async def initialize_request_handler(self):
+        self.request_handler = RequestHandler(self.session)
 
 
-bot = ModlinkBot()
+bot = ModLink()
 
 
-if __name__ == '__main__':
-    for extension in extensions:
-        bot.load_extension(extension)
+def check_if_verified(ctx):
+    return ctx.message.author.id == 668828647653638174
 
+
+@bot.command(name="sync")
+@commands.check(check_if_verified)
+async def sync(ctx):
+    x = await bot.tree.sync()
+    print(x)
+    await ctx.send("Bot synced!")
 
 bot.run(os.getenv("DISCORD_TOKEN"))
