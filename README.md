@@ -49,6 +49,7 @@ The prefix is ``-`` and is currently unchangeable. All text commands are also av
    * -enb (ENB info board)
    * -ini (ini resources)
    * -modlist (modlist sharing resources)
+   * -wabbajack (Wabbajack modlist information)
    * -ussep (link to USSEP)
    * -tudm (link to TUDM)
    * -synthesis (link to Synthesis patcher)
