@@ -62,7 +62,10 @@ common_acronyms = {
     'heart breaker': 'Heart Breaker - A Killmove Mod',
     'dyndolod 3': 'DynDOLOD 3 Alpha',
     'cocks': 'Constructible Object Custom Keyword System',
-    'jop': 'Joy of Perspective'
+    'jop': 'Joy of Perspective',
+    'mic': 'More Informative Console',
+    'cao': 'cathedral assets optimizer',
+    'balls': 'Beautiful Artistic and Lorefriendly Loading Screens'
 }
 
 sos_acronym = {
