@@ -65,7 +65,12 @@ common_acronyms = {
     'jop': 'Joy of Perspective',
     'mic': 'More Informative Console',
     'cao': 'cathedral assets optimizer',
-    'balls': 'Beautiful Artistic and Lorefriendly Loading Screens'
+    'balls': 'Beautiful Artistic and Lorefriendly Loading Screens',
+    'boobies': 'B.O.O.B.I.E.S (aka Immersive Icons)',
+    'ocf': 'Object Categorization Framework',
+    'thicc': 'The Handy Icon Collection Collective',
+    'penis': 'Phenomenally Enriched and Nuanced Ingredients for SkyUI (P.E.N.I.S. for B.O.O.B.I.E.S.)',
+    'ass': 'Aura Scrumptious Supplement (A.S.S. for B.O.O.B.I.E.S.)'
 }
 
 sos_acronym = {
